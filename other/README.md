@@ -27,7 +27,7 @@ Supplementary material for Team MadEngineerz, WRO 2026 Future Engineers. This fo
 | **Steering research** | [`Hardware..pdf`](./Hardware..pdf) | Ackermann steering selection, the reasoning behind reduced tyre scrub and more consistent path tracking, and the choice of the EMAX ES08MA II as the steering actuator. |
 | **Propulsion research** | [`Hardware..pdf`](./Hardware..pdf) | Rear wheel drive layout with a single N20 motor, and the evaluation of three transmission options: spur gear drive, timing belt drive and rear differential drive, with the advantages and disadvantages of each. |
 | **Battery placement and weight distribution** | [`Battery plan.pdf`](./Battery%20plan.pdf) | Battery specification and its position above the drivetrain, and the relationship between rear axle loading and the authority of the Ackermann steering system. |
-| **Code architecture research** | [`Code Architecture..pdf`](./Code%20Architecture..pdf) | Sensor reliance split for the Obstacle Challenge, the two core software structure covering vision and navigation, the Pure Pursuit approach to steering, and the preliminary parking sequence. Also covers the simpler Open Challenge strategy. |
+| **Code architecture research** | [`Code Architecture..pdf`](./Code%20Architecture..pdf) | Optimized camera-based obstacle detection using YUV422 and NumPy, colour-based obstacle identification, relative angle calculation, PID-based steering, preliminary parking manoeuvre, and the simpler Open Challenge navigation strategy. |
 
 ## Technical Documentation
 
