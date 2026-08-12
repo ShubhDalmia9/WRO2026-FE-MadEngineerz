@@ -380,7 +380,7 @@ The vehicle was developed in four stages, each one closing out a different class
 
 ### 1. Concept development and requirements analysis
 
-Work started on paper. A large number of design sketches were produced before any CAD, exploring the overall vehicle layout, the arrangement of the steering and drive subsystems, and how the components would be packaged. Sketching is far faster than modelling for comparing alternatives, so layouts that would not work were identified and set aside quickly, at the cost of a page rather than hours of modelling.
+Work started on paper. We made design sketches before we produced any CAD, exploring the overall vehicle layout, the arrangement of the steering and drive subsystems, and how the components would be packaged. Sketching allowed us to quickly explore different layouts and ideas before moving to CAD. It helped us compare basic concepts and choose a suitable design direction.
 
 What this stage produced was the architecture the rest of the design is built on: Ackermann steering for path repeatability, rear wheel drive to keep the drive path a straight shaft independent of the steering, and a size target that fixed the 121 by 83 by 83 mm envelope. Fixing the envelope at concept stage is what turned the later packaging decisions into genuine constraints rather than afterthoughts, and the 67 mm wheelbase and 85 mm track follow directly from it.
 
