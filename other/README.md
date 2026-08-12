@@ -6,7 +6,7 @@ Supplementary material for Team MadEngineerz, WRO 2026 Future Engineers. This fo
 
 | Component | Image | Description |
 |---|---|---|
-| **Raspberry Pi Zero 2 W** | <img src="./Raspberry%20Pi%20Zero.png" width="180"> | Main compute board. Runs the vision pipeline and navigation. |
+| **Raspberry Pi Zero W** | <img src="./Raspberry%20Pi%20Zero.png" width="180"> | Main compute board. Runs the vision pipeline and navigation. |
 | **Raspberry Pi Camera** | <img src="./Raspberry%20Pi%20Camera.png" width="180"> | Primary navigation sensor. Used for obstacle detection and colour identification. |
 | **VL53L1X ToF** | <img src="./VL53L1X%20ToF.png" width="180"> | Time of flight distance sensor. |
 | **VL53L3CX ToF** | <img src="./VL53L3CX%20ToF.png" width="180"> | Time of flight distance sensor. |
