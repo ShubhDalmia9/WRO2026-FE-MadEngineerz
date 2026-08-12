@@ -447,9 +447,9 @@ The principles below are drawn from the design decisions visible in the research
 
 **Challenge.** The obstacle detection algorithm worked, but it was slow, reported a low frame rate, struggled under varying lighting, and overloaded the CPU of a test Raspberry Pi 3, which is considerably more powerful than the Zero W the robot actually carries. It also drew bounding boxes above the obstacles rather than on them.
 
-**Approach.** The problem was traced to how the detection defined an obstacle's position.
+**Approach.** We can now achieve a comfortable 30-70fps without light issues.
 
-**Solution.** The algorithm was changed to work from the centre of an obstacle rather than from its corner.
+**Solution.** Higher resolutions were dropped for QQVGA, colour format was changed from BGR and HSV to YUV422 as YUV is raw data from the camera and separates luminance (y) from u and v, therefore making colour data immune to bad lighting, a problem that affects BGR. HSV can be used but it requires a conversion to BGR first, squandering our limited compute.
 
 **Result.** The current pipeline is centroid based, computing the mean X and Y of the masked pixels. This is the approach implemented in [`CameraProccesingUnit..py`](./CameraProccesingUnit..py) today, and it is also what feeds the planned PID avoidance algorithm.
 
