@@ -64,7 +64,7 @@ Every decision documented below traces back to one or more of these five objecti
 | Height | 83 mm |
 | Wheelbase | 67 mm |
 | Front track | 85 mm |
-| Mass, printed structure | 71 g |
+| Mass, printed structure | 72.92 g |
 | Steering | Ackermann geometry, front axle |
 | Steering actuator | EMAX ES08MA II metal gear micro servo (×1) |
 | Drive | Rear wheel drive, solid rear axle |
@@ -89,12 +89,15 @@ Every decision documented below traces back to one or more of these five objecti
 | Motor mount | 1.19 g |
 | Steering arm (left) | 0.8 g |
 | Steering arm (right) | 0.8 g |
-| Rear wheel rim | 0.7 g |
+| Rear wheel rim (×2) | 1.4 g (0.7 g each) |
 | Motor gear | 0.6 g |
 | Steering linkage | 0.63 g |
 | Axle gear | 0.30 g |
+| **Total printed structure** | **72.92 g** |
 
-The two chassis halves together account for 64.9 g. Every moving component in the vehicle, meaning both steering arms, the linkage, both gears, the axle, the motor mount and the rim, totals under 8 g combined. This distribution is the direct result of the minimalist approach: mass sits in the load carrying structure, and almost nothing sits in the mechanisms that have to accelerate, rotate or swing.
+The mass distribution across the printed structure is deliberate. The two chassis halves together account for **64.9 g of the 72.92 g total**, or roughly 89%, while the entire steering and drive hardware, meaning both steering arms, the linkage, both gears, the axle, the motor mount and both rims, comes to **8.02 g** combined. Within the chassis itself the split is also intentional: the lower section carries the drivetrain and steering loads and holds 38.9 g, while the upper section, which carries only the electronics deck, was reduced to 26 g by the lightening described in the iteration section.
+
+This is the direct result of the minimalist approach. Mass sits in the load carrying structure where it earns stiffness, and almost none of it sits in the mechanisms that have to accelerate, rotate or swing, where mass would cost response instead.
 
 ## Chassis Architecture
 
@@ -136,7 +139,7 @@ The upper section provides a flat platform for the PCB and perfboard. Because th
 
 ### Weight distribution
 
-Component positions were adjusted iteratively in CAD until the weight distribution and the component layout were both satisfactory. Because the printed structure is only 71 g, the electronics and battery represent a significant fraction of the total vehicle mass, which makes where they sit a mechanical decision and not just a packaging one.
+Component positions were adjusted iteratively in CAD until the weight distribution and the component layout were both satisfactory. Because the printed structure is only 72.92 g, the electronics and battery represent a significant fraction of the total vehicle mass, which makes where they sit a mechanical decision and not just a packaging one.
 
 ## Ackermann Steering System
 
@@ -285,7 +288,7 @@ Rigidity is pursued here for a specific reason: every millimetre of unwanted mov
 
 ## Design Iteration
 
-The design reached its current form through a series of alternatives that were modelled, evaluated and refined in CAD. The table records what was tried and what was adopted.
+The design reached its current form through two phases of iteration. The first was on paper, where a large number of design sketches were used to explore vehicle layouts, subsystem arrangements and component packaging before modelling began. The second was in CAD, where the alternatives below were modelled, evaluated and refined against one another. The table records what was tried and what was adopted.
 
 | # | Subsystem | Alternatives evaluated | Outcome |
 |---|---|---|---|
@@ -303,11 +306,11 @@ The design reached its current form through a series of alternatives that were m
 
 **Gear type.** Helical and double helical gearing offers smoother engagement and higher contact ratio in conventional machine design, and both forms were modelled before the plain spur pair was adopted. The mechanical properties that favour a spur pair in this application, namely the absence of axial thrust to react into printed structure and a tooth profile that lies in the print plane, are set out in the transmission section above.
 
-**Wall thickness.** The chassis was first modelled with 4 mm walls and refined to 3 mm. The chassis sections dominate the structural mass at 64.9 g of the 71 g total, so wall thickness is the single largest lever on vehicle mass, acting on the two largest parts in the vehicle. The 3 mm result retains the stiffness the structure needs while removing mass where there was most of it to remove.
+**Wall thickness.** The chassis was first modelled with 4 mm walls and refined to 3 mm. The chassis sections dominate the structural mass at 64.9 g of the 72.92 g total, so wall thickness is the single largest lever on vehicle mass, acting on the two largest parts in the vehicle. The 3 mm result retains the stiffness the structure needs while removing mass where there was most of it to remove.
 
 **Chassis architecture.** The chassis began as a single piece and was split into upper and lower sections after design trade off analysis. The resulting architecture is what provides the serviceability and electronics access described earlier, and the screwed interface between the halves is what preserves rigidity across the split.
 
-**Rear drive.** A mechanical differential was considered for the rear axle, and the spur gear drive on a solid axle was adopted instead. The consequence is accepted knowingly: with a solid axle, both rear wheels turn at the same speed, so during a turn the rear wheels share a single rotational speed between them. At 71 g the resulting forces are small, while a printed differential would have added several additional gears, bearing surfaces and a housing to the one subsystem that transmits continuous load. Part count and reliability were traded against differential action, and reduced tyre scrub is delivered at the front axle by the Ackermann geometry, where the steering angles make it matter most.
+**Rear drive.** A mechanical differential was considered for the rear axle, and the spur gear drive on a solid axle was adopted instead. The consequence is accepted knowingly: with a solid axle, both rear wheels turn at the same speed, so during a turn the rear wheels share a single rotational speed between them. At 72.92 g the resulting forces are small, while a printed differential would have added several additional gears, bearing surfaces and a housing to the one subsystem that transmits continuous load. Part count and reliability were traded against differential action, and reduced tyre scrub is delivered at the front axle by the Ackermann geometry, where the steering angles make it matter most.
 
 **Upper section lightening.** The upper section was lightened using the **Lighten FeatureScript in Onshape**, which generates a lightening pattern through the part rather than requiring each pocket to be sketched individually. Applying it to the upper frame removed mass from the section that carries no drivetrain or steering load, while leaving the closed perimeter rails and the surrounding material that provide the frame's stiffness. This is the origin of the aperture pattern visible in the upper section renders, and it is why the upper frame can be lightened aggressively without weakening the structure.
 
@@ -333,7 +336,7 @@ Onshape  →  CAD Design  →  Manufacturing Preparation  →  Bambu Studio  →
 
 ### Material selection
 
-**PLA** is used for the main structure. For a vehicle of this mass the loads in the chassis are low, and PLA offers the highest stiffness of the common FDM materials along with excellent dimensional accuracy, which is the property that actually governs this design: the bearing seats, gear bores and screw interfaces all depend on printed dimensions landing within tolerance. A tougher but less dimensionally stable material would trade away the precision the mechanism relies on in exchange for impact resistance that a 71 g vehicle does not call for.
+**PLA** is used for the main structure. For a vehicle of this mass the loads in the chassis are low, and PLA offers the highest stiffness of the common FDM materials along with excellent dimensional accuracy, which is the property that actually governs this design: the bearing seats, gear bores and screw interfaces all depend on printed dimensions landing within tolerance. A tougher but less dimensionally stable material would trade away the precision the mechanism relies on in exchange for impact resistance that a vehicle of this mass does not call for.
 
 The **wheels are LEGO 87697** at 21 mm diameter by 12 mm wide. Injection moulded rubber tyres offer consistent, repeatable traction and dimensional uniformity between units, and using a standard component means a worn wheel is replaced identically. The printed rim is the adapter between that standard component and our axle.
 
@@ -373,21 +376,27 @@ Every custom manufactured part in the vehicle is listed below. All files are 3MF
 
 ## Engineering Approach
 
-### 1. Conceptual design and requirements analysis
+The vehicle was developed in four stages, each one closing out a different class of question before the next began.
 
-The five objectives set out in the design philosophy were fixed first, and the architecture was chosen against them: Ackermann steering for path repeatability, rear wheel drive to keep the drive path straight and independent of the steering, and a size target that drove the 121 by 83 by 83 mm envelope. Fixing the envelope early is what made the later packaging decisions genuine constraints rather than afterthoughts, and the 67 mm wheelbase and 85 mm track follow from it.
+### 1. Concept development and requirements analysis
 
-### 2. Precision CAD modelling
+Work started on paper. A large number of design sketches were produced before any CAD, exploring the overall vehicle layout, the arrangement of the steering and drive subsystems, and how the components would be packaged. Sketching is far faster than modelling for comparing alternatives, so layouts that would not work were identified and set aside quickly, at the cost of a page rather than hours of modelling.
 
-All parts were modelled parametrically in Onshape with the mechanical interfaces defined as driven dimensions: gear centre distance, bearing seats, kingpin spacing, screw pattern and component mounting features. Modelling the complete assembly rather than individual parts is what allowed interference and packaging to be resolved before material was committed.
+What this stage produced was the architecture the rest of the design is built on: Ackermann steering for path repeatability, rear wheel drive to keep the drive path a straight shaft independent of the steering, and a size target that fixed the 121 by 83 by 83 mm envelope. Fixing the envelope at concept stage is what turned the later packaging decisions into genuine constraints rather than afterthoughts, and the 67 mm wheelbase and 85 mm track follow directly from it.
 
-### 3. Prototyping and optimisation
+### 2. CAD modelling and design refinement
 
-The iterations documented above were carried out at this stage: multiple gear tooth combinations, helical and double helical gear forms, the refinement from 4 mm to 3 mm walls, the split of the chassis into two sections, the selection of the spur gear drive over a differential, the lightening of the upper section using the Lighten FeatureScript in Onshape, and repeated repositioning of components for weight distribution and packaging.
+With the concept settled, modelling in Onshape could concentrate on dimensional accuracy and the mechanical interfaces rather than on deciding what the robot should be. Every part was modelled parametrically, with the interfaces that hold the design together defined as driven dimensions: gear centre distance, bearing seats, kingpin spacing, the screw pattern between the chassis halves, and each component mounting feature. Building the complete assembly rather than isolated parts is what allowed interference and packaging to be resolved in the model.
 
-### 4. Production engineering and system validation
+This is also where the design iteration recorded above took place. Because the assembly was parametric, alternatives could be compared against one another directly: multiple gear tooth combinations, helical and double helical gear forms against the plain spur pair, the refinement from 4 mm to 3 mm walls, the split of the chassis from one piece into two sections, the spur gear drive weighed against a mechanical differential, the lightening of the upper section with the Lighten FeatureScript, and repeated repositioning of components until the weight distribution and packaging were both satisfactory. Each change propagated through the affected geometry rather than requiring the model to be rebuilt, which is what made that number of alternatives practical to evaluate.
 
-Final parts were prepared in Bambu Studio, printed in PLA on the Bambu Lab A1, and assembled with M2 fasteners into the vehicle documented here.
+### 3. Manufacturing preparation
+
+Each finished part was prepared for production in Bambu Studio. Print orientation is the significant decision at this stage, since it sets the direction of the layer lines relative to the loads each part carries and relative to its printed bores, which matters most on the gears, the axle and the bearing seats. The orientation and plate arrangement chosen here are preserved in the 3MF files published in this folder.
+
+### 4. Production and assembly
+
+Parts were printed in PLA on the Bambu Lab A1 and assembled with M2 fasteners into the vehicle documented here, with the sealed bearings fitted into their seats in the lower chassis section and at the steering knuckles.
 
 ## Validation
 
@@ -403,6 +412,7 @@ The speed and ratio figures in the transmission and speed analysis are calculate
 
 | Decision | Justification |
 |---|---|
+| Sketch led concept development | Alternatives were explored on paper before modelling, so unworkable layouts were set aside quickly and the CAD phase began from a resolved concept. |
 | Compact, lightweight architecture | Lower inertia to accelerate and decelerate, lower load on every printed joint, and less structure needed to achieve a given stiffness. |
 | Ackermann steering | Reduces tyre scrub, which improves both efficiency and the repeatability of the relationship between commanded steering and actual path. |
 | Rear wheel drive | Separates steering from propulsion and keeps the drive path a straight shaft with no joint that must accommodate a steering angle. |
