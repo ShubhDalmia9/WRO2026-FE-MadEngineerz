@@ -12,7 +12,7 @@ Supplementary material for Team MadEngineerz, WRO 2026 Future Engineers. This fo
 | **VL53L3CX ToF** | <img src="./VL53L3CX%20ToF.png" width="180"> | Time of flight distance sensor. |
 | **Arduino Nano** | <img src="./Arduino%20Nano.png" width="180"> | Secondary microcontroller. |
 | **360 mAh 7.4 V 2S 30C LiPo** | <img src="./battery.png" width="180"> | Main battery pack. |
-| **Mini 560 PRO** | <img src="./Mini%20560%20PRO.png" width="180"> | Step down voltage regulator module. |
+| **MP1584** | <img src="./mp1584.png" width="180"> | Step down voltage regulator module. |
 | **EMAX ES08MA II** | <img src="./Emax%20ES08MA%20II.png" width="180"> | Metal gear micro servo. Actuates the Ackermann steering linkage. |
 | **500 RPM N20** | <img src="./500%20RPM%20N20.png" width="180"> | 6 V metal gear motor with encoder. Drives the rear axle. |
 | **LSM6DSOX IMU** | <img src="./LSM6DSOX%20IMU.png" width="180"> | Inertial measurement unit. Supports parking guidance and path mapping. |
