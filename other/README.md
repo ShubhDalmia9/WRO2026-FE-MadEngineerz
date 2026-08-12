@@ -15,7 +15,7 @@ Supplementary material for Team MadEngineerz, WRO 2026 Future Engineers. This fo
 | **MP1584** | <img src="./mp1584.png" width="180"> | Step down voltage regulator module. |
 | **EMAX ES08MA II** | <img src="./Emax%20ES08MA%20II.png" width="180"> | Metal gear micro servo. Actuates the Ackermann steering linkage. |
 | **500 RPM N20** | <img src="./500%20RPM%20N20.png" width="180"> | 6 V metal gear motor with encoder. Drives the rear axle. |
-| **BNO085 IMU** | <img src="./BNO085.png" width="180"> | Inertial measurement unit. Supports parking guidance and path mapping. |
+| **BNO085 IMU** | <img src="./BNO085.jpg" width="180"> | Inertial measurement unit. Supports parking guidance and path mapping. |
 | **TCA9548A** | <img src="./Tca9548a%20multiplexer.png" width="180"> | I2C multiplexer for running multiple I2C devices on one bus. |
 | **TB6612FNG** | <img src="./TB6612FNG.png" width="180"> | Motor driver. |
 
